@@ -182,11 +182,11 @@ class Fully_Connected_Layer:
         # input: 1차원 tensor
         # output: 1차원 tensor
         # Progress: input -> exp_x[i] / sum(exp_x[0~n]) -> ouput 
-        max_x = np.max(input)
-        exp_x = np.exp(input - max_x)
-        sum_exp_x = np.sum(exp_x)
+        max_x = torch.max(input)
+        exp_x = torch.exp(input - max_x)
+        sum_exp_x = torch.sum(exp_x)
         output = exp_x / sum_exp_x
-        return output   
+        return output 
     
 class Axtivation_Function:
     def __init__(self):
